@@ -97,7 +97,7 @@ if ($dataGeneral["OPT_ACCUEIL"] != 1) {
     </header>
 
     <!-- Banner -->
-    <section id="banner" style="background: url(images/<?= 'jardin-cercle-aumale.jpeg' ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <section id="banner" style="background: url(images/<?= 'cassina.jpg' ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="inner">
             <header>
                 <h1><?= $dataEvt['TXT_ACCUEIL_ST'] ?></h1><br>
@@ -112,9 +112,9 @@ if ($dataGeneral["OPT_ACCUEIL"] != 1) {
 		<div class="inner">
             <h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Présentation</h2>
 			<p style="font-size:20px; text-align: center;">
-				<strong>Date :</strong> Du mardi 21 septembre au mardi 28 septembre 2021<br>
+				<strong>Date :</strong> Du vendredi 11 février au vendredi 18 février 2022<br>
 				<strong>Horaire d’ouverture :</strong> 9h à 20h<br>
-				<strong>Lieu :</strong> Cercle d’Aumale, 22 rue d’Aumale, 75009 Paris.<br>
+				<strong>Lieu :</strong>Cassina, Showroom Mila,o, Via Durini, 16, 20122 Milano<br>
 			</p>
 			<h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Contact</h2>
 			<p style="font-size:20px; text-align: center;">

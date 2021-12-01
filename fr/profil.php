@@ -408,7 +408,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <div class="inner">
 
         <div class="box" style="border-color:#8a6d3b;">
-            <p style="color:#8a6d3b;">La date limite d'inscription est le lundi 13 septembre 2021 !</p>
+            <p style="color:#8a6d3b;">La date limite d'inscription est le vendredi 28 janvier 2022 !</p>
         </div>
 
         <?php if(sizeof($errors) > 0) : ?>
@@ -435,26 +435,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		
 		<div class="box" style="border-color:#093;">
                 <p style="color:#093;">
-                    Votre réponse a bien été prise en compte.
+                    Merci pour votre inscription qui a bien été prise en compte, nous reviendrons rapidement vers vous.<br>
+                    Pour toutes questions, vous pouvez nous contacter par email <a href="mailto:events@thelios.com">events@thelios.com</a>
                                     </p>
             </div>
 		
 		<?php
 		
-			}else{
-		?>
+		//	}else{
+			}
+            if(1){
+?>
 		
 		
 
         <form method="post" action="profil.php<?php if($_GET["idColaborateur"] != ""){if($_SESSION['droit'] == 1){echo "?idColaborateur=".$_GET["idColaborateur"]."&event=".$_GET["event"];}else{echo "?idColaborateur=".$_GET["idColaborateur"];}} ?>" style="margin-top: 70px;">
-            <div class="row uniform" style="display: none !important;">
 
+            <div class="row uniform" style="display:block;">
                 <div class="12u$ 12u$(xsmall)">
                     <hr>
                 </div>
 
                 <div class="12u$ 12u$(xsmall)" style="text-align: left;">
-                    <strong>Participerez-vous à la Thélios Spring Convention 2021 ?</strong>
+                    <strong>Participerez-vous à la Thélios Summer Convention 2022 ?</strong>
                 </div>
                 <div class="6u 12u$(xsmall)">
                     <input type="radio" name="participe" id="yes" value="1" checked >
@@ -462,7 +465,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
                 <div class="6u$ 12u$(xsmall)">
                     <input type="radio" name="participe" id="no" value="2">
-                    <label for="no">Je ne pourrais pas participer</label>
+                    <label for="no">Je ne pourrai pas participer</label>
                 </div>
 
                 <div class="12u$ 12u$(xsmall)">
@@ -484,10 +487,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </select>
                     </div>
                     <div class=" 5u 12u$(xsmall)">
-                        <input type="text" name="nom" id="nom" value="<?=$data['NOM']?>" placeholder="Nom (comme indiqué sur vos papiers d’identité)">
+                        <input type="text" name="nom" id="nom" value="<?=$data['NOM']?>" placeholder="Nom (exactement comme indiqué sur vos papiers d’identité)">
                     </div>
                     <div class=" 5u$ 12u$(xsmall)">
-                        <input type="text" name="prenom" id="prenom" value="<?=$data['PRENOM']?>" placeholder="Prénom">
+                        <input type="text" name="prenom" id="prenom" value="<?=$data['PRENOM']?>" placeholder="Prénom (exactement comme indiqué sur vos papiers d’identité)">
                     </div>
                     <div class=" 6u 12u$(xsmall)">
                         <input type="text" onfocus="(this.type='date')" name="naissance" id="naissance"  value="<?=$data['ADRESSE1']?>" placeholder="Date de naissance">
@@ -539,14 +542,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					
 					<h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px; margin-top: 0px; width: 100%;">Acheminement</h2>
 			
-					<div class="6u 12u$(xsmall)">
+					<div class="3u 12u$(xsmall)">
                         <input type="radio" name="transport" id="avion" value="1" <?php if($data['TRANSPORT'] == 1){echo 'checked';}?>>
-                        <label for="avion">Avion</label>
+                        <label for="avion">En avion</label>
                     </div>
-                    <div class="6u$ 12u$(xsmall)">
+                    <div class="3u 12u$(xsmall)">
                         <input type="radio" name="transport" id="train" value="2" <?php if($data['TRANSPORT'] == 2){echo 'checked';}?>>
-                        <label for="train">Train (1ère classe)</label>
+                        <label for="train">en train (1ère classe)</label>
                     </div>
+
+                    <div class="3u$ 12u$(xsmall)">
+                        <input type="radio" name="transport" id="PropresMoyens" value="3" <?php if($data['TRANSPORT'] == 3){echo 'checked';}?>>
+                        <label for="PropresMoyens">par mes propres moyens</label>
+                    </div>
+
+					<!--     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx displayAvionTrain xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                -->
+                    <div class=" 12u$ 12u$(xsmall) displayAvionTrain">
                     <div class="12u$ 12u$(xsmall)">
                         <input type="text" name="ville_depart" id="ville_depart"  value="<?=$data['VILLE_DEPART1']?>" placeholder="De quel aéroport ou gare souhaitez-vous partir ?">
                     </div>
@@ -575,12 +586,78 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             <option class="horaire_retour4" <?php if($data['PRESENT_DEJ2'] == "17h00/22h00"){echo "selected";} ?> value="17h00/22h00">17h00/22h00</option>
                         </select>
                     </div>
+                    <br>
                     <div class="12u$ 12u$(xsmall)">
-                        <input type="text" name="reference_billet_aller" id="reference_billet_aller"  value="<?=$data['PRESENT_DEJ3']?>" placeholder="Si la référence d’un billet aller vous arrange, merci de le mentionner ici">
+                        <input type="text" name="reference_billet_aller" id="reference_billet_aller"  value="<?=$data['PRESENT_DEJ3']?>" placeholder="Si la référence d’un billet aller vous arrange, merci de le mentionner ici, sous réserve de disponibilité au moment de la réservation">
                     </div>
+                    <br>
                     <div class="12u$ 12u$(xsmall)">
-                        <input type="text" name="reference_billet_retour" id="reference_billet_retour"  value="<?=$data['PRESENT_DEJ4']?>" placeholder="Si la référence d’un billet retour vous arrange, merci de le mentionner ici">
+                        <input type="text" name="reference_billet_retour" id="reference_billet_retour"  value="<?=$data['PRESENT_DEJ4']?>" placeholder="Si la référence d’un billet retour vous arrange, merci de le mentionner ici, sous réserve de disponibilité au moment de la réservation">
                     </div>
+                    <br><br>
+
+                    
+
+                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
+                        <strong>Jour d'arrivée : Voulez-vous un transfert de l’aéroport ou la gare vers :</strong>
+                    </div>
+					<div class="4u 12u$(xsmall)">
+                        <input type="radio" name="transfert_hotel" id="transfert_hoteloui1" value="Hôtel" <?php if($data['PRESENT_REUNION1'] == "Hôtel"){echo 'checked';}?>>
+                        <label for="transfert_hoteloui1">Hôtel</label>
+                    </div>
+					<div class="4u 12u$(xsmall)">
+                        <input type="radio" name="transfert_hotel" id="transfert_hoteloui2" value="Cercle d’Aumale" <?php if($data['PRESENT_REUNION1'] == "Cercle d’Aumale"){echo 'checked';}?>>
+                        <label for="transfert_hoteloui2">Showroom Cassina</label>
+                    </div>
+                    <div class="4u$ 12u$(xsmall)">
+                        <input type="radio" name="transfert_hotel" id="transfert_hotelnon" value="2" <?php if($data['PRESENT_REUNION1'] == 2){echo 'checked';}?>>
+                        <label for="transfert_hotelnon">Non</label>
+                    </div>
+
+
+
+
+
+                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
+                        <strong>Jour de départ : Voulez-vous un transfert vers :</strong>
+                    </div>
+
+                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
+					<div class="4u 12u$(xsmall)">
+                        <input type="radio" name="transfert_aeroport_gare" id="transfert_aeroport_gareoui1" value="Aéroport" <?php if($data['PRESENT_REUNION21'] == "Aéroport"){echo 'checked';}?>>
+                        <label for="transfert_aeroport_gareoui1">Hôtel</label>
+                    </div>
+					<div class="4u 12u$(xsmall)">
+                        <input type="radio" name="transfert_aeroport_gare" id="transfert_aeroport_gareoui2" value="Gare" <?php if($data['PRESENT_REUNION21'] == "Gare"){echo 'checked';}?>>
+                        <label for="transfert_aeroport_gareoui2">Showroom Cassina</label>
+                    </div>
+                    <div class="4u$ 12u$(xsmall)">
+                        <input type="radio" name="transfert_aeroport_gare" id="transfert_aeroport_garenon" value="Non" <?php if($data['PRESENT_REUNION21'] == "Non"){echo 'checked';}?>>
+                        <label for="transfert_aeroport_garenon">Non</label>
+                    </div>
+                    </div>
+
+
+                   </div>
+
+                   <div class=" 12u$ 12u$(xsmall) displayPropresMoyens">
+                    
+                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
+                    <label for="date_depart">Date d'arrivée à Milan</label>
+                       <input type="text" onfocus="(this.type='date')" name="date_depart" id="date_depart"  value="<?=$data['TRANS_ALLER']?>" placeholder="Date d'arrivée à Milan">
+                    </div>
+                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
+                    <label for="date_retour">Date de retour</label>
+                      <input type="text" onfocus="(this.type='date')" name="date_retour" id="date_retour"  value="<?=$data['TRANS_RETOUR']?>" placeholder="Date de retour">
+                    </div>
+
+                    </div>
+
+					<!--     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx accompagnant_transport oui ou non xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                -->
+					<div class=" 12u$ 12u$(xsmall)">
+                        <hr>
+                    </div>
+					
                     <div class="12u$ 12u$(xsmall)" style="text-align: left;">
                         <strong>Voyagez-vous accompagné(e) ?</strong>
                     </div>
@@ -595,41 +672,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class=" 12u$ 12u$(xsmall) displayTransport">
                         <textarea id="mail_accompagnant_transport" name="mail_accompagnant_transport" placeholder="Accompagnant(s) : Nom(s), prénom(s) et e-mail(s)"><?=$data['PRESENT_REUNION4']?></textarea>
                     </div>
-                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
-                        <strong>Jour d'arrivée : Voulez-vous un transfert de l’aéroport ou la gare vers :</strong>
-                    </div>
-					<div class="4u 12u$(xsmall)">
-                        <input type="radio" name="transfert_hotel" id="transfert_hoteloui1" value="Hôtel" <?php if($data['PRESENT_REUNION1'] == "Hôtel"){echo 'checked';}?>>
-                        <label for="transfert_hoteloui1">Hôtel</label>
-                    </div>
-					<div class="4u 12u$(xsmall)">
-                        <input type="radio" name="transfert_hotel" id="transfert_hoteloui2" value="Cercle d’Aumale" <?php if($data['PRESENT_REUNION1'] == "Cercle d’Aumale"){echo 'checked';}?>>
-                        <label for="transfert_hoteloui2">Cercle d’Aumale</label>
-                    </div>
-                    <div class="4u$ 12u$(xsmall)">
-                        <input type="radio" name="transfert_hotel" id="transfert_hotelnon" value="2" <?php if($data['PRESENT_REUNION1'] == 2){echo 'checked';}?>>
-                        <label for="transfert_hotelnon">Non</label>
-                    </div>
-                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
-                        <strong>Jour de départ : Voulez-vous un transfert vers :</strong>
-                    </div>
-					<div class="4u 12u$(xsmall)">
-                        <input type="radio" name="transfert_aeroport_gare" id="transfert_aeroport_gareoui1" value="Aéroport" <?php if($data['PRESENT_REUNION21'] == "Aéroport"){echo 'checked';}?>>
-                        <label for="transfert_aeroport_gareoui1">Aéroport</label>
-                    </div>
-					<div class="4u 12u$(xsmall)">
-                        <input type="radio" name="transfert_aeroport_gare" id="transfert_aeroport_gareoui2" value="Gare" <?php if($data['PRESENT_REUNION21'] == "Gare"){echo 'checked';}?>>
-                        <label for="transfert_aeroport_gareoui2">Gare</label>
-                    </div>
-                    <div class="4u$ 12u$(xsmall)">
-                        <input type="radio" name="transfert_aeroport_gare" id="transfert_aeroport_garenon" value="Non" <?php if($data['PRESENT_REUNION21'] == "Non"){echo 'checked';}?>>
-                        <label for="transfert_aeroport_garenon">Non</label>
-                    </div>
-					
-					<div class=" 12u$ 12u$(xsmall)">
+					<!--     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                -->
+
+                    <div class=" 12u$ 12u$(xsmall)">
                         <hr>
                     </div>
 					
+
 					<h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px; margin-top: 0px; width: 100%;">Hôtel</h2>
 					
                     <div class="12u$ 12u$(xsmall)" style="text-align: left;">
@@ -655,6 +704,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="radio" name="lit" id="simple" value="2" <?php if($data['PRESENT_NUIT3'] == 2){echo 'checked';}?>>
                         <label for="simple">2 lits simples</label>
                     </div>
+
+
+                  	<!--     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  Enfant xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                -->
 					<div class="12u$ 12u$(xsmall)" style="text-align: left;">
                         <strong>Voyagez-vous avec un enfant ?</strong>
                     </div>
@@ -666,10 +718,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="radio" name="accompagnant_enfant" id="accompagnant_enfantnon" value="2" <?php if($data['PRESENT_PDEJ4'] == 2){echo 'checked';}?>>
                         <label for="accompagnant_enfantnon">Non</label>
                     </div>
-					
-					<div class=" 12u$ 12u$(xsmall)">
-                        <hr>
+
+                    <div class="12u$ 12u$(xsmall) displayEnfant" style="text-align: left;">
+                        Merci d'envoyer par mail à l'adresse <a href="mailto:events@thelios.com">events@thelios.com</a> les noms, prénoms, âges et copies des pièces d'identité des enfants qui vous accompagnent.
                     </div>
+
+
+
+					<!--     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                -->
+					<div class=" 12u$ 12u$(xsmall)">  <hr>  </div>
 					
 					<h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px; margin-top: 0px; width: 100%;">Validation</h2>
 					
@@ -688,7 +745,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <label for="pcrnon">Non</label>
                     </div>
                     <div class="12u$" style="text-align: left;">
-                        <input id="conditions_sanitaire" name="conditions_sanitaire" class="conditions" type="checkbox" value="1" <?php if($data['NAV'] == "1"){echo "checked";} ?>><label for="conditions_sanitaire" class="conditions">Je m’engage à respecter les consignes de sécurité sanitaire de mon pays d’origine pour mon arrivée et mon départ de France</label>
+                        <input id="conditions_sanitaire" name="conditions_sanitaire" class="conditions" type="checkbox" value="1" <?php if($data['NAV'] == "1"){echo "checked";} ?>><label for="conditions_sanitaire" class="conditions">Je m’engage vérifier et à respecter les consignes de sécurité sanitaire de mon pays d’origine pour mon arrivée et mon départ d'Italie</label>
                     </div>
 					
 			</div>
@@ -832,7 +889,7 @@ margin-top: 12em;">
         // Set some date in the future. In this case, it's always Jan 1
         //let futureDate = new Date(2020, 0, 30, 17, 15);
 
-        var futureDate  = new Date(2021,08,21);
+        var futureDate  = new Date(2022,02,11);
 
         // Calculate the difference in seconds between the future and current date
         var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
@@ -910,6 +967,28 @@ margin-top: 12em;">
             }
         });
 
+        $("#avion, #train, #PropresMoyens" ).on('change', function () {
+            radioValue = $("input[name='transport']:checked").val();
+            if (parseInt(radioValue) == 1){ 
+                $(".displayAvionTrain").css("display","block");
+                $(".displayPropresMoyens").css("display","none");
+                console.log("Avion");
+            }
+            if (parseInt(radioValue) == 2){ 
+                $(".displayAvionTrain").css("display","block");
+                $(".displayPropresMoyens").css("display","none");
+                console.log("Train");
+            }
+
+            if (parseInt(radioValue) == 3){ 
+                $(".displayAvionTrain").css("display","none");
+                $(".displayPropresMoyens").css("display","block");
+                console.log("PropresMoyens");
+            }
+
+        });
+
+
         $("#accompagnant_transportoui, #accompagnant_transportnon").on('change', function () {
             radioValue = $("input[name='accompagnant_transport']:checked").val();
             if (parseInt(radioValue) == 1){ 
@@ -931,7 +1010,18 @@ margin-top: 12em;">
         });
 		
 		
+		$("#accompagnant_enfantoui, #accompagnant_enfantnon").on('change', function () {
+            radioValue = $("input[name='accompagnant_enfant']:checked").val();
+            if (parseInt(radioValue) == 1){ 
+                $(".displayEnfant").css("display","block");
+            }
+            if (parseInt(radioValue) == 2){ 
+                $(".displayEnfant").css("display","none");
+            }
+        });
 		
+        
+
 		
 
 
@@ -959,6 +1049,35 @@ margin-top: 12em;">
                 $('#civilite').css("color","#333a85");
             }
         });
+
+    
+            radioValue = $("input[name='transport']:checked").val();
+            if (parseInt(radioValue) == 1){ 
+                $(".displayAvionTrain").css("display","block");
+                $(".displayPropresMoyens").css("display","none");
+                console.log("Avion");
+            }
+            if (parseInt(radioValue) == 2){ 
+                $(".displayAvionTrain").css("display","block");
+                $(".displayPropresMoyens").css("display","none");
+                console.log("Train");
+            }
+
+            if (parseInt(radioValue) == 3){ 
+                $(".displayAvionTrain").css("display","none");
+                $(".displayPropresMoyens").css("display","block");
+                console.log("PropresMoyens");
+            }
+
+
+            radioValue = $("input[name='accompagnant_enfant']:checked").val();
+            if (parseInt(radioValue) == 1){ 
+                $(".displayEnfant").css("display","block");
+            }
+            if (parseInt(radioValue) == 2){ 
+                $(".displayEnfant").css("display","none");
+            }
+               
 
 
 
