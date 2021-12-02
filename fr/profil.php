@@ -889,7 +889,7 @@ margin-top: 12em;">
         // Set some date in the future. In this case, it's always Jan 1
         //let futureDate = new Date(2020, 0, 30, 17, 15);
 
-        var futureDate  = new Date(2022,02,11);
+        var futureDate  = new Date(2022,01,02);
 
         // Calculate the difference in seconds between the future and current date
         var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
