@@ -486,12 +486,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             <option class="civ4" <?php if($data['CIVILITE'] == "Mlle"){echo "selected";} ?> value="Mlle">Mlle</option>
                         </select>
                     </div>
+                   
+                   
                     <div class=" 5u 12u$(xsmall)">
-                        <input type="text" name="nom" id="nom" value="<?=$data['NOM']?>" placeholder="Nom (exactement comme indiqué sur vos papiers d’identité)">
-                    </div>
+                        <input type="text" style="text-align=left; "name="nom" id="nom" value="<?=$data['NOM']?>" placeholder="Nom (exactement comme indiqué sur vos papiers d’identité)"><i>Nom (exactement comme indiqué sur vos papiers d’identité)</i></div>
                     <div class=" 5u$ 12u$(xsmall)">
-                        <input type="text" name="prenom" id="prenom" value="<?=$data['PRENOM']?>" placeholder="Prénom (exactement comme indiqué sur vos papiers d’identité)">
-                    </div>
+                        <input type="text" name="prenom" id="prenom" value="<?=$data['PRENOM']?>" placeholder="Prénom (exactement comme indiqué sur vos papiers d’identité)"><i>Prénom (exactement comme indiqué sur vos papiers d’identité)</i></div>
+                   
                     <div class=" 6u 12u$(xsmall)">
                         <input type="text" onfocus="(this.type='date')" name="naissance" id="naissance"  value="<?=$data['ADRESSE1']?>" placeholder="Date de naissance">
                     </div>
@@ -501,14 +502,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class=" 12u$ 12u$(xsmall)">
                         <input type="email" id="mail" name="mail" value="<?=$data['EMAIL']?>" placeholder="E-mail">
                     </div>
-					<div class="12u$ 12u$(xsmall)">
+					
+                    
+
+                    <div class="6u 12u$(xsmall)">
                         <input type="radio" name="statut" id="employe" value="1" <?php if($data['MATRICULE'] == 1){echo 'checked';}?>>
                         <label for="employe">Employé Thélios</label>
                     </div>
-                    <div class="12u$ 12u$(xsmall)">
+                   
+                    <div class="6u 12u$(xsmall)">
                         <input type="radio" name="statut" id="client" value="2" <?php if($data['MATRICULE'] == 2){echo 'checked';}?>>
                         <label for="client">Client</label>
                     </div>
+                  
+
                     <div class="12u$ 12u$(xsmall) displayEmploye">
                         <input type="text" name="fonction" id="fonction" value="<?=$data['FONCTION']?>" placeholder="Fonction">
                     </div>
@@ -544,22 +551,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			
 					<div class="3u 12u$(xsmall)">
                         <input type="radio" name="transport" id="avion" value="1" <?php if($data['TRANSPORT'] == 1){echo 'checked';}?>>
-                        <label for="avion">En avion</label>
+                        <label for="avion">En Avion</label>
                     </div>
                     <div class="3u 12u$(xsmall)">
                         <input type="radio" name="transport" id="train" value="2" <?php if($data['TRANSPORT'] == 2){echo 'checked';}?>>
-                        <label for="train">en train (1ère classe)</label>
+                        <label for="train">En Train (1ère classe)</label>
                     </div>
 
                     <div class="3u$ 12u$(xsmall)">
                         <input type="radio" name="transport" id="PropresMoyens" value="3" <?php if($data['TRANSPORT'] == 3){echo 'checked';}?>>
-                        <label for="PropresMoyens">par mes propres moyens</label>
+                        <label for="PropresMoyens">Par mes propres moyens</label>
                     </div>
 
 					<!--     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx displayAvionTrain xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                -->
                     <div class=" 12u$ 12u$(xsmall) displayAvionTrain">
                     <div class="12u$ 12u$(xsmall)">
-                        <input type="text" name="ville_depart" id="ville_depart"  value="<?=$data['VILLE_DEPART1']?>" placeholder="De quel aéroport ou gare souhaitez-vous partir ?">
+                        <input type="text" name="ville_depart" id="ville_depart"  value="<?=$data['VILLE_DEPART1']?>" placeholder="De quel aéroport ou gare souhaitez-vous partir ? Votre retour sera identique, sauf mention contraire de votre part.">
                     </div>
                     <div class="12u$ 12u$(xsmall)">
                         <input type="text" onfocus="(this.type='date')" name="date_depart" id="date_depart"  value="<?=$data['TRANS_ALLER']?>" placeholder="Date de départ">
@@ -572,9 +579,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             <option class="horaire_depart4" <?php if($data['PRESENT_DEJ1'] == "17h00/22h00"){echo "selected";} ?> value="17h00/22h00">17h00/22h00</option>
                         </select>
                     </div>
-                    <div class="12u$ 12u$(xsmall)">
-                        <input type="text" name="ville_retour" id="ville_retour"  value="<?=$data['VILLE_DEPART2']?>" placeholder="Vers quel aéroport ou gare souhaitez-vous revenir ?">
+                   	<!--   <div class="12u$ 12u$(xsmall)">
+                        <input type="text" name="ville_retour" id="ville_retour"  value="<?//=$data['VILLE_DEPART2']?>" placeholder="Vers quel aéroport ou gare souhaitez-vous revenir ?">
                     </div>
+            -->
                     <div class="12u$ 12u$(xsmall)">
                         <input type="text" onfocus="(this.type='date')" name="date_retour" id="date_retour"  value="<?=$data['TRANS_RETOUR']?>" placeholder="Date de retour">
                     </div>
@@ -601,7 +609,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="12u$ 12u$(xsmall)" style="text-align: left;">
                         <strong>Jour d'arrivée : Voulez-vous un transfert de l’aéroport ou la gare vers :</strong>
                     </div>
-					<div class="4u 12u$(xsmall)">
+                    <div class="12u$ 12u$(xsmall)" style="text-align: left;">
+                    <div class="4u 12u$(xsmall)">
                         <input type="radio" name="transfert_hotel" id="transfert_hoteloui1" value="Hôtel" <?php if($data['PRESENT_REUNION1'] == "Hôtel"){echo 'checked';}?>>
                         <label for="transfert_hoteloui1">Hôtel</label>
                     </div>
@@ -613,13 +622,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="radio" name="transfert_hotel" id="transfert_hotelnon" value="2" <?php if($data['PRESENT_REUNION1'] == 2){echo 'checked';}?>>
                         <label for="transfert_hotelnon">Non</label>
                     </div>
+                    </div>
 
 
 
 
 
                     <div class="12u$ 12u$(xsmall)" style="text-align: left;">
-                        <strong>Jour de départ : Voulez-vous un transfert vers :</strong>
+                        <strong>Jour de départ : Voulez-vous un transfert vers l'aéroport ou la gare, selon votre plan de transport, depuis :</strong>
                     </div>
 
                     <div class="12u$ 12u$(xsmall)" style="text-align: left;">
@@ -745,7 +755,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <label for="pcrnon">Non</label>
                     </div>
                     <div class="12u$" style="text-align: left;">
-                        <input id="conditions_sanitaire" name="conditions_sanitaire" class="conditions" type="checkbox" value="1" <?php if($data['NAV'] == "1"){echo "checked";} ?>><label for="conditions_sanitaire" class="conditions">Je m’engage vérifier et à respecter les consignes de sécurité sanitaire de mon pays d’origine pour mon arrivée et mon départ d'Italie</label>
+                        <input id="conditions_sanitaire" name="conditions_sanitaire" class="conditions" type="checkbox" value="1" <?php if($data['NAV'] == "1"){echo "checked";} ?>><label for="conditions_sanitaire" class="conditions">Je m’engage à vérifier et à respecter les consignes de sécurité sanitaire de mon pays d’origine pour mon arrivée et mon départ d'Italie</label>
                     </div>
 					
 			</div>
