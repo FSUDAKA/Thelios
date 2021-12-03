@@ -111,9 +111,9 @@ if ($dataGeneral["OPT_ACCUEIL"] != 1) {
 		<div class="inner">
             <h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Presentazione</h2>
 			<p style="font-size:20px; text-align: center;">
-<strong>Data :</strong> Da martedì 21 settembre a martedì 28 settembre 2021<br>
-<strong>Orario di apertura :</strong> dalle 9:00 alle 20:00<br>
-<strong>Luogo:</strong> Cercle d’Aumale, 22 rue d’Aumale, 75009 Parigi
+<strong>Data :</strong> Da venerdi 11 febbraio a venerdi 18 febbraio 2022<br>
+<strong>Orario di apertura :</strong> Dalle 9:00 alle 20:00<br>
+<strong>Luogo :</strong> Cassina, Showroom Milano, Via Durini 16, 20122 Milano
 
 			</p>
 			<h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Contatto</h2>

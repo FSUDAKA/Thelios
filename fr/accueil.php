@@ -113,8 +113,8 @@ if ($dataGeneral["OPT_ACCUEIL"] != 1) {
             <h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Présentation</h2>
 			<p style="font-size:20px; text-align: center;">
 				<strong>Date :</strong> Du vendredi 11 février au vendredi 18 février 2022<br>
-				<strong>Horaire d’ouverture :</strong> 9h à 20h<br>
-				<strong>Lieu : </strong>Cassina, Showroom Mila,o, Via Durini, 16, 20122 Milano<br>
+				<strong>Horaires d’ouverture : </strong>De 9h à 20h<br>
+				<strong>Lieu : </strong>Cassina, Showroom Milano, Via Durini 16, 20122 Milano<br>
 			</p>
 			<h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Contact</h2>
 			<p style="font-size:20px; text-align: center;">

@@ -111,9 +111,9 @@ if ($dataGeneral["OPT_ACCUEIL"] != 1) {
 		<div class="inner">
             <h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Presentation</h2>
 			<p style="font-size:20px; text-align: center;">
-				<strong>Date:</strong> Tuesday 21 September to Tuesday 28 September 2021<br>
-<strong>Opening hours:</strong> 9am to 8pm<br>
-<strong>Location:</strong> Cercle d'Aumale, 22 rue d'Aumale, Paris 75009.
+				<strong>Date :</strong> Friday 11 February to Friday 18 February 2022<br>
+<strong>Opening hours :</strong> From 9am to 8pm<br>
+<strong>Location :</strong> Cassina, Showroom Milano, Via Durini 16, 20122 Milano
 			</p>
 			<h2 id="content" style="color:#f99f1b; font-size: 38px; line-height: 38px;">Contact</h2>
 			<p style="font-size:20px; text-align: center;">
