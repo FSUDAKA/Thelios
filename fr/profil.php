@@ -494,7 +494,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="text" name="prenom" id="prenom" value="<?=$data['PRENOM']?>" placeholder="Prénom (exactement comme indiqué sur vos papiers d’identité)"><i>Prénom (exactement comme indiqué sur vos papiers d’identité)</i></div>
                    
                     <div class=" 6u 12u$(xsmall)">
-                        <input type="text" onfocus="(this.type='date')" name="naissance" id="naissance"  value="<?=$data['ADRESSE1']?>" placeholder="Date de naissance">
+                        <input type="text" onfocus="(this.type='date')" name="naissance" id="naissance"  value="<?=$data['ADRESSE1']?>" placeholder="Date de naissance"><i>Date de naissance</i>
                     </div>
                     <div class=" 6u$ 12u$(xsmall)">
                         <input type="tel" name="tel" id="tel" value="<?=$data['MOBILE']?>" placeholder="Numéro de téléphone">
@@ -537,7 +537,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="text" name="nationalite" id="nationalite"  value="<?=$data['ADRESSE2']?>" placeholder="Nationalité">
                     </div>
                     <div class="12u$ 12u$(xsmall)">
-                        <input type="text" name="validite_identite" onfocus="(this.type='date')" id="validite_identite" value="<?=$data['TEL']?>" placeholder="Date de validité du passeport/CNI">
+                        <input type="text" name="validite_identite" onfocus="(this.type='date')" id="validite_identite" value="<?=$data['TEL']?>" placeholder="Date de validité du passeport/CNI"><i>Date de validité</i>
                     </div>
 					
 			</div>
