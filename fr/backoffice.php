@@ -161,7 +161,7 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['valider'])){
                                         }else{
                                             $view = 0;
                                         }
-                                        echo '<tr><th style="color:#000;">'.$data[1].'</th><th style="text-align: right; width: 170px;">'; if($view == 1){echo'<a data-fancybox data-type="iframe" data-src="accueil.php?event='.$data[0].'&view=admin" href="javascript:;" style="text-decoration:none;" title="Voir le site"><i class="fas fa-eye"></i></a>';} if($data[14] == 1){echo'<a href="liste.php?event='.$data[0].'" style="text-decoration:none;" title="Gestion des participants"><i class="fas fa-address-book"></i></a></th></tr>';
+                                        echo '<tr><th style="color:#000;">'.$data[1].'</th><th style="text-align: right; width: 170px;">'; if($view == 1){echo'<a data-fancybox data-type="iframe" data-src="accueil.php?event='.$data[0].'&view=admin" href="javascript:;" style="text-decoration:none;" title="Voir le site"><i class="fas fa-eye"></i></a>';} if($data[14] == 1){echo'<a href="liste.php?event='.$data[0].'" style="text-decoration:none;" title="Gestion des participants"><i class="fas fa-address-book"></i></a><a href="settings.php?event=1" style="text-decoration:none;" title="Paramètres"><i class="fas fa-cog"></i></a></th></tr>';
                                         }
                                     }
                                     mysqli_free_result ($req);

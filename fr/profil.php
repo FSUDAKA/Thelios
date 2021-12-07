@@ -537,7 +537,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="text" name="nationalite" id="nationalite"  value="<?=$data['ADRESSE2']?>" placeholder="Nationalité">
                     </div>
                     <div class="12u$ 12u$(xsmall)">
-                        <input type="text" name="validite_identite" onfocus="(this.type='date')" id="validite_identite" value="<?=$data['TEL']?>" placeholder="Date de validité du passeport/CNI"><i>Date de validité</i>
+                        <input type="text" name="validite_identite" onfocus="(this.type='date')" id="validite_identite" value="<?=$data['TEL']?>" placeholder="Date de validité du passeport/CNI"><i style="text-align: left;display: block;">Date de validité</i>
                     </div>
 					
 			</div>
@@ -569,7 +569,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="text" name="ville_depart" id="ville_depart"  value="<?=$data['VILLE_DEPART1']?>" placeholder="De quel aéroport ou gare souhaitez-vous partir ? Votre retour sera identique, sauf mention contraire de votre part.">
                     </div>
                     <div class="12u$ 12u$(xsmall)">
-                        <input type="text" onfocus="(this.type='date')" name="date_depart" id="date_depart"  value="<?=$data['TRANS_ALLER']?>" placeholder="Date de départ">
+                        <input type="text" onfocus="(this.type='date')" name="date_depart" id="date_depart"  value="<?=$data['TRANS_ALLER']?>" placeholder="Date de départ"><i style="text-align: left;display: block;">Date de départ</i>
                     </div>
 					<div class="12u$ 12u$(xsmall)">
                         <select id="horaire_depart" name="horaire_depart">
@@ -584,7 +584,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     </div>
             -->
                     <div class="12u$ 12u$(xsmall)">
-                        <input type="text" onfocus="(this.type='date')" name="date_retour" id="date_retour"  value="<?=$data['TRANS_RETOUR']?>" placeholder="Date de retour">
+                        <input type="text" onfocus="(this.type='date')" name="date_retour" id="date_retour"  value="<?=$data['TRANS_RETOUR']?>" placeholder="Date de retour"><i style="text-align: left;display: block;">Date de retour</i>
                     </div>
 					<div class="12u$ 12u$(xsmall)">
                         <select id="horaire_retour" name="horaire_retour">

@@ -48,10 +48,10 @@
         </header>
 
         <!-- Banner -->
-        <section id="banner" style="background: url(images/jardin-cercle-aumale.jpeg); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <section id="banner" style="background: url(images/cassina.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
             <div class="inner">
                 <header>
-                    <h1><?= $dataEvt['TXT_HEBERGEMENT_ST'] ?></h1><br>
+                    <h1>THÉLIOS SUMMER CONVENTION 2022<br>
                 </header>
             </div>
         </section>
